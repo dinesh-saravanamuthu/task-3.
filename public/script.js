@@ -10,7 +10,7 @@ const refreshBtn = document.getElementById('refreshBtn');
 async function loadBooks() {
   booksList.textContent = 'Loading...';
   try {
-    const response = await fetch('/books');
+    const response = await fetch('https://task-3-three-silk.vercel.app/books');
     const books = await response.json();
     if (!books.length) {
       booksList.innerHTML = '<div class="empty">No books available.</div>';
@@ -34,7 +34,7 @@ async function loadBooks() {
 }
 
 async function editBook(id) {
-  const response = await fetch(`/books/${id}`);
+  const response = await fetch(`https://task-3-three-silk.vercel.app/books/${id}`);
   if (!response.ok) return;
   const book = await response.json();
   bookId.value = book.id;
@@ -46,7 +46,7 @@ async function editBook(id) {
 
 async function deleteBook(id) {
   if (!confirm('Delete this book?')) return;
-  const response = await fetch(`/books/${id}`, { method: 'DELETE' });
+  const response = await fetch(`https://task-3-three-silk.vercel.app/books/${id}`, { method: 'DELETE' });
   const data = await response.json();
   showMessage(response.ok ? data.message : data.error);
   loadBooks();
@@ -56,7 +56,7 @@ form.addEventListener('submit', async (event) => {
   event.preventDefault();
   const data = { title: title.value.trim(), author: author.value.trim() };
   const id = bookId.value;
-  const url = id ? `/books/${id}` : '/books';
+  const url = 'https://task-3-three-silk.vercel.app' + {id ? `/books/${id}` : '/books'};
   const method = id ? 'PUT' : 'POST';
 
   const response = await fetch(url, {
