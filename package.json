@@ -1,0 +1,16 @@
+{
+  "name": "task-3-book-rest-api",
+  "version": "1.0.0",
+  "description": "Task 3 - REST API to manage a list of books using Node.js and Express",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": ["nodejs", "express", "rest-api", "crud", "books"],
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  }
+}

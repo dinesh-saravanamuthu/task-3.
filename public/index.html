@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Management API</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📚 Book Management</h1>
+      <p>Task 3 — REST API using Node.js &amp; Express</p>
+    </header>
+
+    <section class="card">
+      <h2>Add / Update Book</h2>
+      <form id="bookForm">
+        <input type="hidden" id="bookId" />
+        <label for="title">Book Title</label>
+        <input id="title" type="text" placeholder="Enter book title" required />
+        <label for="author">Author</label>
+        <input id="author" type="text" placeholder="Enter author name" required />
+        <div class="buttons">
+          <button type="submit">Save Book</button>
+          <button type="button" id="cancelBtn" class="secondary" hidden>Cancel Edit</button>
+        </div>
+      </form>
+      <p id="message"></p>
+    </section>
+
+    <section class="card">
+      <div class="list-header">
+        <h2>Books</h2>
+        <button id="refreshBtn" class="secondary">Refresh</button>
+      </div>
+      <div id="booksList">Loading...</div>
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

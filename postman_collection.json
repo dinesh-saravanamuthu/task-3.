@@ -1,0 +1,49 @@
+{
+  "info": {
+    "name": "Task 3 - Book REST API",
+    "_postman_id": "b8d2c0d2-1b7a-4e08-9a0d-1c2b7c2b0003",
+    "description": "Postman requests for testing the Task 3 Book REST API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:3000" }
+  ],
+  "item": [
+    {
+      "name": "Get all books",
+      "request": { "method": "GET", "url": "{{baseUrl}}/books" }
+    },
+    {
+      "name": "Get book by ID",
+      "request": { "method": "GET", "url": "{{baseUrl}}/books/1" }
+    },
+    {
+      "name": "Create book",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"Clean Code\",\n  \"author\": \"Robert C. Martin\"\n}"
+        },
+        "url": "{{baseUrl}}/books"
+      }
+    },
+    {
+      "name": "Update book",
+      "request": {
+        "method": "PUT",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"title\": \"The Alchemist - Updated\",\n  \"author\": \"Paulo Coelho\"\n}"
+        },
+        "url": "{{baseUrl}}/books/1"
+      }
+    },
+    {
+      "name": "Delete book",
+      "request": { "method": "DELETE", "url": "{{baseUrl}}/books/1" }
+    }
+  ]
+}
